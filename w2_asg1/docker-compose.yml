@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  mongo:
+    image: mongo:4.2
+    ports:
+      - 27017:27017
+    volumes:
+      - volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: touch
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    restart: always
+volumes:
+  volume:
+    driver: local
